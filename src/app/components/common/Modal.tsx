@@ -135,7 +135,7 @@ export const DialogComp = ({ homeData, onUpdate }: Props) => {
         <DialogHeader>
           <DialogTitle>Edit Content</DialogTitle>
           <DialogDescription>
-            Make changes to your content here. Click save when you're done.
+            Make changes to your content here. Click save when you are done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
