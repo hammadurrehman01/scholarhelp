@@ -1,21 +1,22 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import BannerForm from "./BannerForm";
-import Link from "next/link";
-import { useInView } from "react-intersection-observer";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import axios from "axios";
 import SkeletonComp from "@/app/components/common/SkeletonComp";
 import SkeletonForm from "@/app/components/common/SkeletonForm";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import BannerForm from "./BannerForm";
+import { DialogComp } from "@/app/components/common/Modal";
 
 interface ParentProps {
-  homeData: any
+  homeData: any;
+  onUpdate: any;
 }
 
-export const HeroSection = ({homeData}: ParentProps) => {
+export const HeroSection = ({ homeData, onUpdate  }: ParentProps) => {
+
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -37,15 +38,16 @@ export const HeroSection = ({homeData}: ParentProps) => {
       >
         <div className="grid lg:grid-cols-2 grid-cols-1 mx-auto max-w-screen-xl py-10 ">
           <div className="py-20 px-5 md:pt-36">
+            <DialogComp homeData={homeData} onUpdate={onUpdate} />
             {!homeData ? (
               <SkeletonComp />
             ) : (
               <>
                 <h1 className=" text-center py-2 lg:text-left dark:text-zinc-100 text-zinc-900 text-lg sm:text-4xl font-extrabold ">
-                  {homeData?.heading}
+                  {homeData?.heading?.text}
                 </h1>
                 <h2 className="text-center mt-2 lg:text-left dark:text-zinc-100 text-zinc-900  sm:text-2xl font-medium">
-                  {homeData?.sub_heading}
+                  {homeData?.sub_heading?.text}
                 </h2>
                 <div className="flex flex-col lg:flex-row items-center xl:w-[50vw] gap-4 sm:mt-2 mt-6">
                   <div className="flex items-center gap-1">
@@ -56,7 +58,7 @@ export const HeroSection = ({homeData}: ParentProps) => {
                       alt="instructor"
                     ></Image>
                     <h3 className="text-center dark:text-zinc-100 text-zinc-900 text-sm md:text-base font-medium">
-                      {homeData?.service_values?.one}
+                      {homeData?.service_values?.one?.text}
                     </h3>
                     <div className="hidden lg:block w-[2px] h-20 bg-muted-foreground "></div>
                   </div>
@@ -68,7 +70,7 @@ export const HeroSection = ({homeData}: ParentProps) => {
                       alt="record"
                     ></Image>
                     <h3 className="text-center dark:text-zinc-100 text-zinc-900 text-sm md:text-base font-medium">
-                      {homeData?.service_values?.two}
+                      {homeData?.service_values?.two?.text}
                     </h3>
                     <div className="hidden lg:block w-[2px] h-20 bg-muted-foreground "></div>
                   </div>
@@ -80,14 +82,14 @@ export const HeroSection = ({homeData}: ParentProps) => {
                       alt="phd"
                     ></Image>
                     <h3 className="ml-1 dark:text-zinc-100 text-zinc-900 text-sm md:text-base font-medium">
-                      {homeData?.service_values?.three}
+                      {homeData?.service_values?.three?.text}
                     </h3>
                     <div className="hidden lg:block w-[2px] h-16 bg-muted-foreground/0 "></div>
                   </div>
                 </div>
                 <CtaButtons
-                  ordernow={homeData?.buttons?.one}
-                  chatOn={homeData?.buttons?.two}
+                  ordernow={homeData?.buttons?.one?.text}
+                  chatOn={homeData?.buttons?.two?.text}
                 />
               </>
             )}

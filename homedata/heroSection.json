@@ -1,23 +1,62 @@
 {
-  "heading": "Take My Online Class for me in USA and Ace My Exam",
-  "sub_heading": "Taking My Affordable Classes Online Guarantee You the Academic Distinction",
+  "heading": {
+    "id": 1,
+    "text": "Take My Online Class for me in USA and Ace My Exam"
+  },
+  "sub_heading": {
+    "id": 2,
+    "text": "Taking My Affordable Classes Online Guarantee You the Academic Distinction"
+  },
   "service_values": {
-    "one": "950 + PhD Instructor",
-    "two": "Proven Track Record",
-    "three": "Affordable Packages"
+    "one": {
+      "id": 3,
+      "text": "950 + PhD Instructor"
+    },
+    "two": {
+      "id": 4,
+      "text": "Proven Track Record"
+    },
+    "three": {
+      "id": 5,
+      "text": "Affordable Packages"
+    }
   },
   "buttons": {
-    "one": "Order Now",
-    "two": "Chat On Whatsapp"
+    "one": {
+      "id": 6,
+      "text": "Order Now"
+    },
+    "two": {
+      "id": 7,
+      "text": "Chat On Whatsapp"
+    }
   },
   "formData": {
-    "topBar": "Upto 40% Discount",
-    "heading": "Get Instant Help From Our Experts",
-    "tabs": {
-      "one": "Writing",
-      "two": "Rewriting",
-      "three": "Editing"
+    "topBar": {
+      "id": 8,
+      "text": "Upto 40% Discount"
     },
-    "formButton": "Get A Free Quote"
+    "heading": {
+      "id": 9,
+      "text": "Get Instant Help From Our Experts"
+    },
+    "tabs": {
+      "one": {
+        "id": 10,
+        "text": "Writing"
+      },
+      "two": {
+        "id": 11,
+        "text": "Rewriting"
+      },
+      "three": {
+        "id": 12,
+        "text": "Editing"
+      }
+    },
+    "formButton": {
+      "id": 13,
+      "text": "Get A Free Quote"
+    }
   }
 }

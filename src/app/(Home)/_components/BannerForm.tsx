@@ -105,12 +105,12 @@ function BannerForm({ formData }: Props) {
         <div className="flex justify-center items-center lg:-translate-y-4    -translate-y-4">
           <div className=" w-1/2 shadow-2xl rounded rounded-tl-2xl rounded-br-2xl bg-indigo-600 py-3 ">
             <div className="text-center font-medium text-zinc-100 text-sm md:text-base  ">
-              {formData?.topBar}
+              {formData?.topBar?.text}
             </div>
           </div>
         </div>
         <div className="text-center font-bold text-lg md:text-2xl mt-2 px-3  ">
-          {formData?.heading}
+          {formData?.heading?.text}
         </div>
         <div className="flex justify-center items-center mt-3">
           <button
@@ -122,7 +122,7 @@ function BannerForm({ formData }: Props) {
             }`}
             onClick={() => handleClick("writing")}
           >
-            {formData?.tabs?.one}
+            {formData?.tabs?.one?.text}
           </button>
           <button
             type="button"
@@ -133,7 +133,7 @@ function BannerForm({ formData }: Props) {
             }`}
             onClick={() => handleClick("rewriting")}
           >
-            {formData?.tabs?.two}
+            {formData?.tabs?.two?.text}
           </button>
           <button
             type="button"
@@ -144,7 +144,7 @@ function BannerForm({ formData }: Props) {
             }`}
             onClick={() => handleClick("editing")}
           >
-            {formData?.tabs?.three}
+            {formData?.tabs?.three?.text}
           </button>
         </div>
 
@@ -328,7 +328,7 @@ function BannerForm({ formData }: Props) {
                 <p>Submitting...</p>
               </>
             ) : (
-              formData?.tabs?.three
+              formData?.formButton?.text
             )}
           </button>
         </div>

@@ -20,7 +20,6 @@ import Loader from "../components/common/Loader";
 const HomeComp = () => {
   const [homeData, setHomeData] = useState<any>();
 
-  useEffect(() => {
     const fetchHomeData = async () => {
       try {
         const response = await axios.get<any>(
@@ -31,15 +30,21 @@ const HomeComp = () => {
       }
     };
 
-    fetchHomeData();
-  }, []);
+    useEffect(() => {
+      fetchHomeData(); // Fetch initial data on component mount
+    }, []);
+
+    const handleUpdate = async () => {
+      await fetchHomeData(); // Manually refetch after update
+    };
+
   return (
     <>
       {!homeData ? (
         <Loader />
       ) : (
         <div>
-          <HeroSection homeData={homeData} />
+          <HeroSection homeData={homeData} onUpdate={handleUpdate} />
           <WorkFlow />
           <AboutContent />
           <FormContent />
