@@ -218,8 +218,8 @@ export const HeroSection = ({homeData}: ParentProps) => {
 // };
 
 interface Props {
-  ordernow: string;
-  chatOn: string;
+  ordernow?: string;
+  chatOn?: string;
 }
 
 export function CtaButtons({ ordernow, chatOn }: Props) {

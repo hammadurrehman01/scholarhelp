@@ -9,7 +9,6 @@ import 'aos/dist/aos.css';
 
 const ServiceCard = ({ imageSrc, title, description,link, animation }:any) => {
 
-
   return (
     <div  data-aos={animation} className="group p-4">
       <div className="flex flex-col items-center border-[5px] border-transparent

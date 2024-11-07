@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 interface Props {
-  formData: any;
+  formData?: any;
 }
 
 function BannerForm({ formData }: Props) {
