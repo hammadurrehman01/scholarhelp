@@ -24,8 +24,7 @@ const HomeComp = () => {
     const fetchHomeData = async () => {
       try {
         const response = await axios.get<any>(
-          "/api/fetch-homeData", {}
-        );
+          "/api/fetch-homeData");
         setHomeData(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
