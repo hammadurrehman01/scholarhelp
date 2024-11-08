@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 
 // Ensure absolute path for JSON file
-const dataFilePath = path.join(process.cwd(), "tmp/homedata", "heroSection.json");
+const dataFilePath = path.join(process.cwd(), "homedata", "heroSection.json");
 
 export async function PUT(req: any, res: any) {
   try {
@@ -31,7 +31,7 @@ export async function PUT(req: any, res: any) {
 
     // Log the updated jsonData before writing
     // Ensure absolute path for writing back to the file
-    const writePath = path.join(process.cwd(), "tmp/homedata", "heroSection.json");
+    const writePath = path.join(process.cwd(), "homedata", "heroSection.json");
 
     // Write the updated content back to the JSON file
     await fs.writeFile(writePath, JSON.stringify(data, null, 2));
