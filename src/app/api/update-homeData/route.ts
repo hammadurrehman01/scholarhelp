@@ -2,18 +2,13 @@ import fs from "fs/promises";
 import path from "path";
 
 // Ensure absolute path for JSON file
-const dataFilePath = path.join(process.cwd(), "homedata", "heroSection.json");
+const dataFilePath = path.join(process.cwd(), "public/tmp/homedata", "heroSection.json");
 
 export async function PUT(req: any, res: any) {
   try {
-    // Parse incoming request data
+   
     const data = await req.json();
 
-    // Log the incoming data and the file path to ensure it's correct
-    console.log("Incoming data:", JSON.stringify(data, null, 2));
-    console.log("Data file path:", dataFilePath);
-
-    // Read the existing JSON file content
     const fileContent = await fs.readFile(dataFilePath, "utf-8");
     const jsonData = JSON.parse(fileContent);
 
@@ -35,16 +30,11 @@ export async function PUT(req: any, res: any) {
     updateTextById(data, jsonData);
 
     // Log the updated jsonData before writing
-    console.log("Updated JSON data:", JSON.stringify(jsonData, null, 2));
-
     // Ensure absolute path for writing back to the file
-    const writePath = path.join(process.cwd(), "homedata", "heroSection.json");
+    const writePath = path.join(process.cwd(), "public/tmp/homedata", "heroSection.json");
 
     // Write the updated content back to the JSON file
     await fs.writeFile(writePath, JSON.stringify(data, null, 2));
-
-    // Confirm the file was written successfully
-    console.log("File written successfully");
 
     // Respond with success
     return new Response(
