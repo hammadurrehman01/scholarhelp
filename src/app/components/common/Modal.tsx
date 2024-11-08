@@ -96,8 +96,8 @@ export const DialogComp = ({ homeData, onUpdate }: Props) => {
         one: { id: servicevalues1.id, text: servicevalues1.text },
         two: { id: servicevalues2.id, text: servicevalues2.text },
         three: { id: servicevalues3.id, text: servicevalues3.text },
-      },
-      buttons: {
+      },  
+      buttons:  {
         one: { id: buttons1.id, text: buttons1.text },
         two: { id: buttons2.id, text: buttons2.text },
       },
