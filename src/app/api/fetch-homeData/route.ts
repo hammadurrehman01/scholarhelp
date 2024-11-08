@@ -1,3 +1,4 @@
+import { heroSection } from "@/constants/fileDateRoutes";
 import fs from "fs/promises";  // Use fs.promises to work with async/await
 
 export async function GET(req: Request, res: Response) {
