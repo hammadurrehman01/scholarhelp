@@ -2,7 +2,7 @@ import fs from "fs/promises";  // Use fs.promises to work with async/await
 
 export async function GET(req: Request, res: Response) {
   try {
-    const data = await fs.readFile("public/tmp/homedata/heroSection.json", "utf-8");
+    const data = await fs.readFile(heroSection, "utf-8");
     return new Response(
       JSON.stringify({ success: true, data: JSON.parse(data) }),
       {

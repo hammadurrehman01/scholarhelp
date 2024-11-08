@@ -1,0 +1,1 @@
+const heroSection = 'tmp/homedata/heroSection.json';
